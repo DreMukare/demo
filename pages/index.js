@@ -63,8 +63,8 @@ export default function Home() {
 									<Image
 										src='/482947.svg'
 										alt='mail icon'
-										height={22}
-										width={30}
+										height={11.38}
+										width={15.16}
 									/>
 								</span>
 								<input
@@ -81,8 +81,8 @@ export default function Home() {
 									<Image
 										src='/2886699.svg'
 										alt='lock icon'
-										width={30}
-										height={22}
+										width={13.36}
+										height={17.76}
 									/>
 								</span>
 								<input

@@ -11,6 +11,7 @@
 	text-align: center;
 	color: #ffffff;
 	font-family: 'Quicksand', sans-serif;
+	letter-spacing: 4.8px;
 }
 
 .main {
@@ -35,6 +36,8 @@
 	display: flex;
 	gap: 25px;
 	align-items: center;
+	justify-content: center;
+	margin-left: 100px;
 }
 
 .formSection .formInput {
@@ -52,15 +55,16 @@
 	border: none;
 	height: 100%;
 	margin-left: 15px;
+	font-size: 18px;
 }
 
 .warning {
 	color: #ff0000;
 	display: none;
 	align-self: flex-start;
-	margin-left: -38em;
+	margin-left: -47em;
 	margin-bottom: -10px;
-	font-size: 16px;
+	font-size: 9px;
 }
 
 .formSection .formInput input:active,
@@ -87,7 +91,6 @@
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	padding-left: 30px;
 	cursor: pointer;
 }
 
@@ -95,6 +98,7 @@
 	width: 30px;
 	height: 22px;
 	color: black;
+	margin-left: -20px;
 }
 
 .formSection button {
@@ -111,6 +115,7 @@
 .formName {
 	font-family: 'Canela', serif;
 	letter-spacing: 3px;
+	font-weight: 200;
 }
 
 .greeting {
