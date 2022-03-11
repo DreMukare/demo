@@ -35,13 +35,55 @@
 	align-items: center;
 }
 
-.formSection input {
+.formSection .formInput {
 	width: 315px;
 	height: 49px;
 	border: 1px solid #ffffff;
+	background-color: #ffffff;
 	border-radius: 360px;
-	padding-left: 64px;
 	font-size: 18px;
+	display: flex;
+	align-items: center;
+}
+
+.formSection .formInput input {
+	border: none;
+	height: 100%;
+	margin-left: 15px;
+}
+
+.formSection .formInput input:active,
+.formSection .formInput input:focus {
+	outline: none;
+}
+
+.formSection .formInput .icon {
+	width: 50px;
+	background-color: #f2f2f2;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 100%;
+	border-top-left-radius: 360px;
+	border-bottom-left-radius: 360px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.formSection .formInput .showPass {
+	align-self: flex-end;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.formSection .formInput .showPass .eye {
+	width: 30px;
+	height: 22px;
+	color: black;
 }
 
 .formSection button {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -6,6 +7,12 @@ import styles from '../styles/Home.module.css';
 const name = 'Amazing';
 
 export default function Home() {
+	const [passwordVisible, setPasswordVisible] = useState(false);
+
+	const handleClick = (e) => {
+		setPasswordVisible(!passwordVisible);
+	};
+
 	return (
 		<div className={styles.page}>
 			<Head>
@@ -30,13 +37,61 @@ export default function Home() {
 						<h1 className={styles.greeting}>Hi {name}</h1>
 						<h2 className={styles.formName}>Login</h2>
 						<form className={styles.formSection}>
-							<input type='email' name='email' id='email' placeholder='email' />
-							<input
-								type='password'
-								name='password'
-								id='password'
-								placeholder='password'
-							/>
+							<div className={styles.formInput}>
+								<span className={styles.icon}>
+									<Image
+										src='/482947.svg'
+										alt='mail icon'
+										height={22}
+										width={30}
+									/>
+								</span>
+								<input
+									type='email'
+									name='email'
+									id='email'
+									placeholder='email'
+									required
+								/>
+							</div>
+							<div className={styles.formInput}>
+								<span className={styles.icon}>
+									<Image
+										src='/2886699.svg'
+										alt='lock icon'
+										width={30}
+										height={22}
+									/>
+								</span>
+								<input
+									type={passwordVisible ? 'text' : 'password'}
+									name='password'
+									id='password'
+									placeholder='password'
+									required
+								/>
+								<span className={styles.showPass} onClick={handleClick}>
+									<svg
+										xmlns='http://www.w3.org/2000/svg'
+										className={styles.eye}
+										fill='none'
+										viewBox='0 0 24 24'
+										stroke='currentColor'
+										strokeWidth={2}
+									>
+										<path
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'
+										/>
+										<path
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'
+										/>
+									</svg>
+								</span>
+							</div>
 							<button type='submit'>
 								<Image
 									src='/Group_306@2x.png'
