@@ -22,11 +22,12 @@ export default function Home() {
 		if (value === '') {
 			warning.style.display = 'block';
 			email.style.border = '1px solid #FF0000';
-		}
-		if (!emailRegex.test(email)) {
-			warning.innerText = 'EMAIL INVALID';
+		} else if (!emailRegex.test(value)) {
 			warning.style.display = 'block';
 			email.style.border = '1px solid #FF0000';
+		} else if (value && emailRegex.test(value)) {
+			email.style.border = 'none';
+			warning.style.display = 'none';
 		}
 	};
 
