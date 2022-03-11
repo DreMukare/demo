@@ -13,6 +13,23 @@ export default function Home() {
 		setPasswordVisible(!passwordVisible);
 	};
 
+	const handleChange = (e) => {
+		const value = e.target.value;
+		const email = document.getElementById('emailGroup');
+		const warning = document.getElementById('warning');
+		const emailRegex = /\S+@\S+\.\S+/;
+
+		if (value === '') {
+			warning.style.display = 'block';
+			email.style.border = '1px solid #FF0000';
+		}
+		if (!emailRegex.test(email)) {
+			warning.innerText = 'EMAIL INVALID';
+			warning.style.display = 'block';
+			email.style.border = '1px solid #FF0000';
+		}
+	};
+
 	return (
 		<div className={styles.page}>
 			<Head>
@@ -36,8 +53,11 @@ export default function Home() {
 						</div>
 						<h1 className={styles.greeting}>Hi {name}</h1>
 						<h2 className={styles.formName}>Login</h2>
+						<p id='warning' className={styles.warning}>
+							EMAIL REQUIRED
+						</p>
 						<form className={styles.formSection}>
-							<div className={styles.formInput}>
+							<div className={styles.formInput} id='emailGroup'>
 								<span className={styles.icon}>
 									<Image
 										src='/482947.svg'
@@ -51,6 +71,7 @@ export default function Home() {
 									name='email'
 									id='email'
 									placeholder='email'
+									onChange={handleChange}
 									required
 								/>
 							</div>
@@ -69,6 +90,7 @@ export default function Home() {
 									id='password'
 									placeholder='password'
 									required
+									onChange={handleChange}
 								/>
 								<span className={styles.showPass} onClick={handleClick}>
 									<svg
